@@ -3,11 +3,10 @@ FROM openjdk:8-jre-alpine
 # Install required packages
 RUN apk add --no-cache \
     bash \
-    # Python 3.x should work too, but is not tested as part of the Storm CI enviornment
-    python=2.6.6 \
+    python \
     su-exec
 
-ENV STORM_USER=storm \
+ENV STORM_USER=usama \
     STORM_CONF_DIR=/conf \
     STORM_DATA_DIR=/data \
     STORM_LOG_DIR=/logs
@@ -36,8 +35,12 @@ RUN set -ex; \
 
 ENV PATH $PATH:/$DISTRO_NAME/bin
 
+ADD storm.yaml /conf
+
 RUN mkdir /theproject
 WORKDIR /theproject
+
+RUN chown -R "$STORM_USER" "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"
 
 #COPY docker-entrypoint.sh /
 #RUN ["chmod", "+x", "/docker-entrypoint.sh"]
