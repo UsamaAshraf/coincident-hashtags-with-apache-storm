@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-      <artifactId>coincident-hashtags</artifactId>
+      <artifactId>storm</artifactId>
       <groupId>org.apache.storm</groupId>
       <version>1.2.1</version>
       <relativePath>../../pom.xml</relativePath>
@@ -11,7 +11,7 @@
   <artifactId>storm-starter</artifactId>
   <packaging>jar</packaging>
 
-  <name>storm-starter</name>
+  <name>coincident-hashtags</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +19,13 @@
   </properties>
 
   <dependencies>
+    <!--<dependency>
+      <groupId>jdk.tools</groupId>
+      <artifactId>jdk.tools</artifactId>
+      <scope>system</scope>
+      <version>1.7</version>
+      <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+    </dependency>-->
     <dependency>
       <groupId>org.hdrhistogram</groupId>
       <artifactId>HdrHistogram</artifactId>
