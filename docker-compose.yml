@@ -10,10 +10,9 @@ services:
         build: ./storm-nimbus
         links:
             - zookeeper
-        # Map port 6627 on the host machine to port 6627 of the container.
-        ports:
-            - 6627:6627
         tty: true
+        volumes:
+            - './storm-nimbus:/theproject'
 
     storm-supervisor:
         build: ./storm-supervisor
@@ -24,9 +23,7 @@ services:
         ports:
             - 8080:8080
         tty: true
-        volumes:
-            - './storm-supervisor:/theproject'
 
-# Host volume used to store our code.
+# Host volume used to store our code on the master node (Nimbus).
 volumes:
-    storm-supervisor:
+    storm-nimbus:
