@@ -1,6 +1,6 @@
 package coincident_hashtags;
 
-import org.storm.Config;
+import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.task.OutputCollector;
