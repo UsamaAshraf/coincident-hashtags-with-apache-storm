@@ -11,6 +11,9 @@ services:
         links:
             - zookeeper
         tty: true
+        # To access the Storm UI from our host machine.  
+        ports:
+            - 8080:8080
         volumes:
             - './storm-nimbus:/theproject'
 
@@ -19,9 +22,6 @@ services:
         links:
             - zookeeper
             - storm-nimbus
-        # To access the Storm UI from our host machine.  
-        ports:
-            - 8080:8080
         tty: true
 
 # Host volume used to store our code on the master node (Nimbus).
