@@ -8,7 +8,7 @@
       <relativePath>../../pom.xml</relativePath>
   </parent>
 
-  <artifactId>storm-starter</artifactId>
+  <artifactId>coincident-hashtags</artifactId>
   <packaging>jar</packaging>
 
   <name>coincident-hashtags</name>
