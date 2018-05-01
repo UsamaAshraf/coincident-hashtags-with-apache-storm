@@ -20,6 +20,9 @@ services:
         links:
             - zookeeper
             - storm-nimbus
+        # To access the Storm UI from our host machine.  
+        ports:
+            - 8080:8080
         tty: true
         volumes:
             - './storm-supervisor:/theproject'
