@@ -60,3 +60,6 @@ RUN cd /tmp && \
     mv "apache-maven-$MAVEN_VERSION" "$M2_HOME" && \
     ln -s "$M2_HOME/bin/mvn" /usr/bin/mvn && \
     rm -R /tmp/*
+
+RUN mkdir /theproject
+WORKDIR /theproject

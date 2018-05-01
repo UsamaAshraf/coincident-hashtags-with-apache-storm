@@ -61,6 +61,3 @@ RUN cd /tmp && \
     ln -s "$M2_HOME/bin/mvn" /usr/bin/mvn && \
     rm -R /tmp/*
 
-
-RUN mkdir /theproject
-WORKDIR /theproject
