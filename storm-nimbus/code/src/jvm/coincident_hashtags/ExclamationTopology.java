@@ -47,9 +47,8 @@ public class ExclamationTopology {
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer)
     {
-      // tell storm the schema of the output tuple for this spout
-
-      // tuple consists of a single column called 'exclamated-word'
+      // Tell storm the schema of the output tuple for this spout.
+      // The tuple consists of a single column called 'exclamated-word'
       declarer.declare(new Fields("exclamated-word"));
     }
   }
@@ -76,14 +75,6 @@ public class ExclamationTopology {
     // to the two supervisors evenly: four each. 
     conf.setNumWorkers(3);
 
-    if (args != null && args.length > 0) {
-
-      // create the topology and submit with config
-      StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
-
-    } else {
-
-      StormSubmitter.submitTopology("exclamation-topology", conf, builder.createTopology());
-    }
+    StormSubmitter.submitTopology("exclamation-topology", conf, builder.createTopology());
   }
 }
