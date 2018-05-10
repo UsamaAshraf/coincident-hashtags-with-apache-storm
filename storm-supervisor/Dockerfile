@@ -40,7 +40,8 @@ RUN set -ex; \
     wget -q "http://www.apache.org/dist/storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz"; \
     export GNUPGHOME="$(mktemp -d)"; \
     tar -xzf "$DISTRO_NAME.tar.gz"; \
-    chown -R "$STORM_USER:$STORM_USER" "$DISTRO_NAME";
+    chown -R "$STORM_USER:$STORM_USER" "$DISTRO_NAME"; \
+    rm "$DISTRO_NAME.tar.gz";
 
 ENV PATH $PATH:/$DISTRO_NAME/bin
 
