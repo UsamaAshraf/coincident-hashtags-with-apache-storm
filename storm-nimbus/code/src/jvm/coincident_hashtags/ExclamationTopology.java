@@ -42,6 +42,7 @@ public class ExclamationTopology {
 
       // emit the word with exclamations
       _collector.emit(tuple, new Values(exclamatedWord.toString()));
+      _collector.ack(tuple);
     }
 
     @Override
