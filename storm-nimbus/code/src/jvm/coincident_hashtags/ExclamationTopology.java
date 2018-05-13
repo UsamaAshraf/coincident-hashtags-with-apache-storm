@@ -64,10 +64,10 @@ public class ExclamationTopology {
 
     builder.setBolt("exclaim2", new ExclamationBolt(), 2).shuffleGrouping("exclaim1");
 
-    // create the default config object
+    // Create a config object.
     Config conf = new Config();
 
-    // Turn on  debugging mode
+    // Turn on debugging mode.
     conf.setDebug(true);
     
     // Set the number of workers for running all spout and bolt tasks.
