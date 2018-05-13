@@ -73,7 +73,7 @@ public class ExclamationTopology {
     // Set the number of workers for running all spout and bolt tasks.
     // If we have two supervisors with 4 allocated workers each, and this topology is
     // submitted to the master (Nimbus) node, then these 8 workers will be distributed
-    // to the two supervisors evenly: four each. 
+    // among the two supervisors evenly: four each. 
     conf.setNumWorkers(3);
 
     StormSubmitter.submitTopology("exclamation-topology", conf, builder.createTopology());
