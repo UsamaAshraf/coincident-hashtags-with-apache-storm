@@ -4,7 +4,7 @@ FROM ubuntu
 
 RUN apt-get update && \
     apt-get install -y build-essential && \
-    apt-get install -y software-properties-common python-software-properties && \
+    apt-get install -y software-properties-common && \
     apt-get install -y python
 
 # Install Java.
